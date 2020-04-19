@@ -25,8 +25,8 @@ class KnightAlgo:
                 next_x = self.knight_x + self.direction_x[i]
                 next_y = self.knight_y + self.direction_y[i]
 
-                if 0 <= next_x and next_x <= self.board_x:
-                    if 0 <= next_y and next_y <= self.board_y:
+                if 0 <= next_x and next_x < self.board_x:
+                    if 0 <= next_y and next_y < self.board_y:
                         if self.chess_board[next_y][next_x] == 0:
                             # count the available neighbors of the neighbor
                             neighbours_count = 0
@@ -46,12 +46,16 @@ class KnightAlgo:
                 break
 
     def printBoard(self):
-        for cy in range(self.board_y):
-            for cx in range(self.board_x):
-                print(str.rjust(str(self.chess_board[cy][cx]), 2))
+        print(str(self.chess_board))
 
     def testAlgo(self):
-        pass
+        if self.chess_board.__contains__(63):
+            print("63")
+        if self.chess_board.__contains__(0):
+            print("not  all places where travelled ")
+        else:
+            print("success all places where travelled ")
+
         # make sure all places where travelled
         #  make sure that there are 63  steps
 
@@ -60,7 +64,7 @@ def runKightAlgo():
     knightAlgo = KnightAlgo()
     knightAlgo.algo()
     knightAlgo.printBoard()
-    KnightAlgo.testAlgo()
+    knightAlgo.testAlgo()
 
 
 if __name__ == "__main__":
