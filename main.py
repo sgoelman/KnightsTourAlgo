@@ -3,9 +3,9 @@ import random
 
 
 class KnightAlgo:
-    def __init__(self):
-        self.board_x = 8
-        self.board_y = 8
+    def __init__(self,x,y):
+        self.board_x = x
+        self.board_y = y
         self.chess_board = [[0 for x in range(self.board_x)] for y in range(self.board_y)]  # chessboard
         # moves available  in each direction
         self.direction_x = [-2, -1, 1, 2, -2, -1, 1, 2]
@@ -48,8 +48,8 @@ class KnightAlgo:
         print(str(self.chess_board))
 
     def testAlgo(self):
-        if self.chess_board.__contains__(63):
-            print("63")
+        if self.chess_board.__contains__(37):
+            print("Failed more than 64 steps")
         if self.chess_board.__contains__(0):
             print("not  all places where travelled ")
         else:
@@ -60,7 +60,7 @@ class KnightAlgo:
 
 
 def runKightAlgo():
-    knightAlgo = KnightAlgo()
+    knightAlgo = KnightAlgo(8,8)
     knightAlgo.algo()
     knightAlgo.printBoard()
     knightAlgo.testAlgo()
