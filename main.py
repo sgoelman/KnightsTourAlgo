@@ -11,10 +11,9 @@ class KnightAlgo:
         self.direction_x = [-2, -1, 1, 2, -2, -1, 1, 2]
         self.direction_y = [1, 2, 2, 1, -1, -2, -2, -1]
         # starting at a random position
-        # self.knight_x = random.randint(0, self.board_x - 1)
-        # self.knight_y = random.randint(0, self.board_y - 1)
-        self.knight_x = 4
-        self.knight_y = 7
+        self.knight_x = random.randint(0, self.board_x - 1)
+        self.knight_y = random.randint(0, self.board_y - 1)
+
         print("Knight's starting position X:" + str(self.knight_x) + " Y:" + str(self.knight_y))
 
     def algo(self):
